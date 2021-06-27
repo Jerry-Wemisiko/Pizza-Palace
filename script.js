@@ -111,5 +111,5 @@ orderPizza.prototype.GetSizecost= function (){
             return 900
         }
         else
-            return 1100
+            return 1150
 }
