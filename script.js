@@ -1,10 +1,10 @@
 function orderPizza(pizza,Size,Crust,Topping)
 {
     event.preventDefault();
-    var pizza ="";
-    var Size="";
-    var Crust="";
-    var Topping="";
+    // var pizza ="";
+    // var Size="";
+    // var Crust="";
+    // var Topping="";
 
     this.pizza = pizza;
     this.Size = Size;
@@ -113,3 +113,16 @@ orderPizza.prototype.GetSizecost= function (){
         else
             return 1150
 }
+
+$(document).ready(function(){
+    $("#pizzaPalace").submit(function(event){
+        event.preventDefault();
+
+        var selectedType = $("#pizza").val();
+        var selectedSize = $("#selectSize").val();
+        var selectedCrust = $("#selectCrust").val();
+        var selectedTopping = $("#selectTopping").val();
+
+
+    })
+});
