@@ -28,7 +28,6 @@ p{
 .content{
     width: 10000px;
     text-align: center;
-    /* justify-content: center; */
     align-items: center;
     margin-right: 600px;
 }
@@ -51,7 +50,6 @@ body{
     z-index: 10000;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     transition: 0.5s;
     color: white;
     font-weight: 700;
