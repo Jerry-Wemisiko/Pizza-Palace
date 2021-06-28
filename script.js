@@ -113,16 +113,61 @@ orderPizza.prototype.GetSizecost= function (){
         else
             return 1150
 }
+//Global var
+    var customerName = "";
+    var totalCost = 0;
+    var pizzasOrdered = [];
+    var estate = "";
 
 $(document).ready(function(){
     $("#pizzaPalace").submit(function(event){
         event.preventDefault();
+        
 
         var selectedType = $("#pizza").val();
         var selectedSize = $("#selectSize").val();
         var selectedCrust = $("#selectCrust").val();
         var selectedTopping = $("#selectTopping").val();
 
+        var newOrderPizza = new orderPizza(
+            selectedType,
+            selectedSize,
+            selectedCrust,
+            selectedTopping
+            );
+        pizzasOrdered.push(newOrderPizza);
+        $("#pizza").val("");
+        $("#selectSize").val("");
+        $("#selectCrust").val("");
+        $("#selectTopping").val("");
+        totalCost = 0;
+        for (let i = 0; i < pizzasOrdered.length; i++) {
+            totalCost += pizzasOrdered[i].GetTotalcost();
+        }
 
+        $("#order-summary").append(
+            "<tr>" +
+            '<th scope="row">' +
+            newOrderPizza.type +
+            " (" +
+            newOrderPizza.topping +
+            ") - " +
+            newOrderPizza.GetSizecost() +
+            "</th>" +
+            "<td>" +
+            newOrderPizza.size +
+            " - " +
+            newOrderPizza.GetToppingscost() +
+            "</td>" +
+            "<td>" +
+            newOrderPizza.crust +
+            " - " +
+            newOrderPizza.GetCrustcost() +
+            "</td>" +
+            "<td>" +
+            newOrderPizza.GetTotalcost() +
+            "</td>" +
+            "</tr>"
+        );
     })
 });
