@@ -23,10 +23,11 @@ There are no known bugs at this moment.
 3. CSS
 4. GIT
 5. JavaScript
+6. JQuery
 
 ### Live Site
 
-View [live]https://jerry-wemisiko.github.io/Akan-Names/
+View [live](https://jerry-wemisiko.github.io/Pizza-Palace/)
 
 ### License
 
